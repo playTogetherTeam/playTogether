@@ -54,7 +54,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UITabBarControllerDelegate
         let DiscoverNav = UINavigationController.init(rootViewController: DiscoverVC)
         
         //发布
-        let ReleaseVC = ReleaseViewController.init()
+        let ReleaseVC = UIViewController.init()
         ReleaseVC .tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "Show_normal"), selectedImage: UIImage(named: "Show_normal"))
         let ReleaseNav = UINavigationController(rootViewController: ReleaseVC )
         
@@ -105,10 +105,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UITabBarControllerDelegate
         
         return true
     }
+    
     func presentShowMeViewController(viewController:UIViewController) {
-//        let showMeVC = ShowMeViewController.init(leftTitle: "取消", rightTitle: "")
-//        let nav = BaseNavigationController(rootViewController: showMeVC)
-        //tabbarController.presentViewController(nav, animated: true, completion: nil)
+        let showMeVC = ReleaseViewController.init(leftTitle: "取消", rightTitle: "")
+        let nav = BaseNavigationController(rootViewController: showMeVC)
+        tabbarController.presentViewController(nav, animated: true, completion: nil)
     }
 
     func applicationWillResignActive(application: UIApplication) {
