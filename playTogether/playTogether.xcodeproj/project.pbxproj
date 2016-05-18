@@ -27,6 +27,8 @@
 		44BC629B1CEC5D96004F1913 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 44BC628D1CEC5D96004F1913 /* UIView+WebCacheOperation.m */; };
 		44BC629E1CEC6A2D004F1913 /* app_JSON in Resources */ = {isa = PBXBuildFile; fileRef = 44BC629D1CEC6A2D004F1913 /* app_JSON */; };
 		44F61F121CE7011000850B6E /* SegmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F61F111CE7011000850B6E /* SegmentView.swift */; };
+		9E15C69A1CECC41D001D6482 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E15C6991CECC41D001D6482 /* BaseNavigationController.swift */; };
+		9E15C69C1CECC42A001D6482 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E15C69B1CECC42A001D6482 /* BaseViewController.swift */; };
 		9E216BB41CC478DB00874A7A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E216BB31CC478DB00874A7A /* AppDelegate.swift */; };
 		9E216BB61CC478DB00874A7A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E216BB51CC478DB00874A7A /* ViewController.swift */; };
 		9E216BB91CC478DB00874A7A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E216BB71CC478DB00874A7A /* Main.storyboard */; };
@@ -77,6 +79,8 @@
 		44BC629C1CEC5E8A004F1913 /* playTogether-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "playTogether-Bridging-Header.h"; sourceTree = "<group>"; };
 		44BC629D1CEC6A2D004F1913 /* app_JSON */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = app_JSON; sourceTree = "<group>"; };
 		44F61F111CE7011000850B6E /* SegmentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentView.swift; sourceTree = "<group>"; };
+		9E15C6991CECC41D001D6482 /* BaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
+		9E15C69B1CECC42A001D6482 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		9E216BB01CC478DB00874A7A /* playTogether.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = playTogether.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E216BB31CC478DB00874A7A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9E216BB51CC478DB00874A7A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -113,6 +117,8 @@
 		442F14CB1CC8C986004CE917 /* 公共 */ = {
 			isa = PBXGroup;
 			children = (
+				9E15C6981CECC3F1001D6482 /* BaseNavigationController */,
+				9E15C6971CECC3E5001D6482 /* BaseViewController */,
 				44BC629C1CEC5E8A004F1913 /* playTogether-Bridging-Header.h */,
 				44BC625B1CEC5D35004F1913 /* SDWebImage */,
 				442F14CF1CC8CDF1004CE917 /* CateGory */,
@@ -189,6 +195,22 @@
 				44BC628D1CEC5D96004F1913 /* UIView+WebCacheOperation.m */,
 			);
 			name = SDWebImage;
+			sourceTree = "<group>";
+		};
+		9E15C6971CECC3E5001D6482 /* BaseViewController */ = {
+			isa = PBXGroup;
+			children = (
+				9E15C69B1CECC42A001D6482 /* BaseViewController.swift */,
+			);
+			name = BaseViewController;
+			sourceTree = "<group>";
+		};
+		9E15C6981CECC3F1001D6482 /* BaseNavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				9E15C6991CECC41D001D6482 /* BaseNavigationController.swift */,
+			);
+			name = BaseNavigationController;
 			sourceTree = "<group>";
 		};
 		9E216BA71CC478DB00874A7A = {
@@ -346,6 +368,7 @@
 				44BC62951CEC5D96004F1913 /* SDWebImagePrefetcher.m in Sources */,
 				442F14D31CC8CE06004CE917 /* UIColor+Hex.m in Sources */,
 				9E216BD31CC5176F00874A7A /* ReleaseViewController.swift in Sources */,
+				9E15C69C1CECC42A001D6482 /* BaseViewController.swift in Sources */,
 				44BC628E1CEC5D96004F1913 /* NSData+ImageContentType.m in Sources */,
 				9E216BCD1CC5145200874A7A /* DiscoverViewController.swift in Sources */,
 				44BC629A1CEC5D96004F1913 /* UIImageView+WebCache.m in Sources */,
@@ -364,6 +387,7 @@
 				44BC62991CEC5D96004F1913 /* UIImageView+HighlightedWebCache.m in Sources */,
 				44BC62911CEC5D96004F1913 /* SDWebImageDecoder.m in Sources */,
 				44BC62941CEC5D96004F1913 /* SDWebImageManager.m in Sources */,
+				9E15C69A1CECC41D001D6482 /* BaseNavigationController.swift in Sources */,
 				44F61F121CE7011000850B6E /* SegmentView.swift in Sources */,
 				9E216BCF1CC516C200874A7A /* MessageCenterViewController.swift in Sources */,
 				44BC628F1CEC5D96004F1913 /* SDImageCache.m in Sources */,
