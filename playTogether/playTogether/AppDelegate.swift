@@ -55,7 +55,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UITabBarControllerDelegate
         
         //发布
         let ReleaseVC = UIViewController.init()
-        ReleaseVC .tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "Show_normal"), selectedImage: UIImage(named: "Show_normal"))
+        ReleaseVC.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "Show_normal"), selectedImage: UIImage(named: "Show_normal"))
         let ReleaseNav = UINavigationController(rootViewController: ReleaseVC )
         
         //消息中心
@@ -107,7 +107,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UITabBarControllerDelegate
     }
     
     func presentShowMeViewController(viewController:UIViewController) {
-        let showMeVC = ReleaseViewController.init(leftTitle: "取消", rightTitle: "")
+        let showMeVC = ReleaseViewController.init(leftTitle: "取消", rightTitle: "完成")
         let nav = BaseNavigationController(rootViewController: showMeVC)
         tabbarController.presentViewController(nav, animated: true, completion: nil)
     }
