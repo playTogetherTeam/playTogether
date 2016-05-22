@@ -39,6 +39,7 @@
 		9E216BCF1CC516C200874A7A /* MessageCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E216BCE1CC516C200874A7A /* MessageCenterViewController.swift */; };
 		9E216BD11CC5172B00874A7A /* PersonCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E216BD01CC5172B00874A7A /* PersonCenterViewController.swift */; };
 		9E216BD31CC5176F00874A7A /* ReleaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E216BD21CC5176F00874A7A /* ReleaseViewController.swift */; };
+		D8C7EE4E1CF178B80080285B /* data.plist in Resources */ = {isa = PBXBuildFile; fileRef = D8C7EE4D1CF178B80080285B /* data.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -93,6 +94,7 @@
 		9E216BCE1CC516C200874A7A /* MessageCenterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageCenterViewController.swift; sourceTree = "<group>"; };
 		9E216BD01CC5172B00874A7A /* PersonCenterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonCenterViewController.swift; sourceTree = "<group>"; };
 		9E216BD21CC5176F00874A7A /* ReleaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReleaseViewController.swift; sourceTree = "<group>"; };
+		D8C7EE4D1CF178B80080285B /* data.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = data.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -278,6 +280,7 @@
 		9E216BCA1CC5115600874A7A /* 个人中心 */ = {
 			isa = PBXGroup;
 			children = (
+				D8C7EE4D1CF178B80080285B /* data.plist */,
 				9E216BD01CC5172B00874A7A /* PersonCenterViewController.swift */,
 			);
 			name = "个人中心";
@@ -352,6 +355,7 @@
 				9E216BBE1CC478DB00874A7A /* LaunchScreen.storyboard in Resources */,
 				9E216BBB1CC478DB00874A7A /* Assets.xcassets in Resources */,
 				44BC629E1CEC6A2D004F1913 /* app_JSON in Resources */,
+				D8C7EE4E1CF178B80080285B /* data.plist in Resources */,
 				9E216BB91CC478DB00874A7A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

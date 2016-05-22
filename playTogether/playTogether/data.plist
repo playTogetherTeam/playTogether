@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<array>
+		<string>账号</string>
+		<string>Mr.洛洛</string>
+	</array>
+	<array>
+		<string>性别</string>
+		<string>男</string>
+	</array>
+	<array>
+		<string>联系电话</string>
+		<string>181561511415</string>
+	</array>
+	<array>
+		<string>QQ邮箱</string>
+		<string>123456798@qq.com</string>
+	</array>
+</array>
+</plist>
