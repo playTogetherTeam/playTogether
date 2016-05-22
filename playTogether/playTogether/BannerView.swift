@@ -9,20 +9,14 @@
 import UIKit
 
 //按钮点击类型
-enum ClickType
-{
-    case GoodSomeThingClickType
-    case SearchClickType
-    case PlantGrassClickType
-    case SignInClickType
-}
+
 
 /// 轮播图 每次滚动的距离
 private let bannerWidth = SCREEN_WIDTH
 
 protocol BannerViewDelegate:NSObjectProtocol
 {
-    func bannerVierFourButtonClicked(clickType:ClickType)
+    func bannerButtonClicked(clickType:Int)
 }
 
 class BannerView: UIView,UIScrollViewDelegate {
@@ -30,6 +24,7 @@ class BannerView: UIView,UIScrollViewDelegate {
     
     var showScrollView = UIScrollView()
     var bannerArray = NSMutableArray()
+    var cateGoryArray = NSMutableArray()
     
     var timer = NSTimer()
     var pageControl = UIPageControl()
@@ -50,11 +45,13 @@ class BannerView: UIView,UIScrollViewDelegate {
         super.init(frame: frame)
         self.backgroundColor = UIColor.whiteColor()
         self.bannerArray = ProductRecommend.createDailyBannerModel() //类方法  返回 banner数组
+        self.cateGoryArray = ProductRecommend.createCateGoryModel()
+        
         print("bannerView ->bannerArray.count = \(self.bannerArray.count)")
         
         self.createBannerView()
         
-        self.createFourButton()
+        self.createButton()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -132,36 +129,23 @@ class BannerView: UIView,UIScrollViewDelegate {
     
     
     ///创建首页 四个 button
-    func createFourButton()
+    func createButton()
     {
-        //好物 button
-        goodSomethingBtn = UIButton.init(frame: CGRectMake(24, 175, 45, 70))
-        goodSomethingBtn.tag = 1
-        goodSomethingBtn.setImage(UIImage(named: "GoodSomething"), forState: .Normal)
-        goodSomethingBtn.setImage(UIImage(named: "GoodSomething"), forState: .Highlighted)
-        goodSomethingBtn.addTarget(self, action: "clickCenter:", forControlEvents: .TouchUpInside)
-        self.addSubview(goodSomethingBtn)
-        //搜索button
-        searchBtn = UIButton.init(frame: CGRectMake(24+45*1+32*1, 175, 45, 70))
-        searchBtn.tag = 2
-        searchBtn.setImage(UIImage(named: "searchLarge"), forState: .Normal)
-        searchBtn.setImage(UIImage(named: "searchLarge"), forState: .Highlighted)
-        searchBtn.addTarget(self, action: "clickCenter:", forControlEvents: .TouchUpInside)
-        self.addSubview(searchBtn)
-        //种草 button
-        plantGrassBtn = UIButton.init(frame: CGRectMake(24+45*2+32*2, 175, 45, 70))
-        plantGrassBtn.tag = 3
-        plantGrassBtn.setImage(UIImage(named: "PlantingGrass"), forState: .Normal)
-        plantGrassBtn.setImage(UIImage(named: "PlantingGrass"), forState: .Highlighted)
-        plantGrassBtn.addTarget(self, action: "clickCenter:", forControlEvents: .TouchUpInside)
-        self.addSubview(plantGrassBtn)
-        //签到 button
-        signInBtn = UIButton.init(frame: CGRectMake(24+45*3+32*3, 175, 45, 70))
-        signInBtn.tag = 4
-        signInBtn.setImage(UIImage(named: "SignIn"), forState: .Normal)
-        signInBtn.setImage(UIImage(named: "SignIn"), forState: .Highlighted)
-        signInBtn.addTarget(self, action: "clickCenter:", forControlEvents: .TouchUpInside)
-        self.addSubview(signInBtn)
+     
+        for(var index = 0 ;index < self.cateGoryArray.count ;index++)
+        {
+            
+            let cateGoryModel = self.cateGoryArray[index] as! CateGoryModel
+            plantGrassBtn = UIButton.init(frame: CGRectMake(CGFloat(24+45*index+32*index), 175, 45, 70))
+            plantGrassBtn.tag = 3
+            plantGrassBtn.setImage(UIImage(named: cateGoryModel.photo!), forState: .Normal)
+            plantGrassBtn.setImage(UIImage(named: cateGoryModel.photo!), forState: .Highlighted)
+            plantGrassBtn.addTarget(self, action: "clickCenter:", forControlEvents: .TouchUpInside)
+            self.addSubview(plantGrassBtn)
+            //签到 button
+          
+        }
+       
         
     }
     
@@ -219,23 +203,7 @@ class BannerView: UIView,UIScrollViewDelegate {
     
     func clickCenter(sender:UIButton)
     {
-        switch sender.tag {
-        case 1:
-            delegate?.bannerVierFourButtonClicked(ClickType.GoodSomeThingClickType)
-            break
-        case 2:
-            delegate?.bannerVierFourButtonClicked(ClickType.SearchClickType)
-            break
-        case 3:
-            delegate?.bannerVierFourButtonClicked(ClickType.PlantGrassClickType)
-            break
-        case 4:
-            delegate?.bannerVierFourButtonClicked(ClickType.SignInClickType)
-            break
-        default :
-            break
-            
-        }
+            delegate?.bannerButtonClicked(sender.tag)
     }
     
 }

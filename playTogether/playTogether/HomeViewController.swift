@@ -23,10 +23,24 @@ class HomeViewController: UIViewController ,SegmentViewDelegate,BannerViewDelega
     /// 轮播视图 ，标签视图 的容器
     var headView = UIView()
     
+    var dataStr = ProductRecommend()
+    var productArr:NSMutableArray?
+    
+    var currentIndex = Int()  //当前显示的页面
+    var tmpCount = Int()
+    var currentContentOffSetX = CGFloat() // 当前的contentOffset.X
+    
     private var segmentView = SegmentView()
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        tmpCount = currentIndex
+        
+        self.loadData()
+        
         createBannerView()
+        
         buildSegmentView()
         
 
@@ -62,10 +76,17 @@ class HomeViewController: UIViewController ,SegmentViewDelegate,BannerViewDelega
         headView.addSubview(bannerView)
     }
     
-    func bannerVierFourButtonClicked(clickType: ClickType) {
+    func bannerButtonClicked(clickType: Int) {
     
             
 
+    }
+    
+    func loadData()
+    {
+        //默认显示0行
+        self.productArr = dataStr.createProductRecommendModel(0)
+        print("product.count = \(self.productArr!.count)")
     }
     
     func buildSegmentView(){
@@ -86,3 +107,5 @@ class HomeViewController: UIViewController ,SegmentViewDelegate,BannerViewDelega
     }
 
 }
+
+

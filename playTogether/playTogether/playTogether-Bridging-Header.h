@@ -4,3 +4,4 @@
 
 #import "UIColor+Hex.h"
 #import "UIImageView+WebCache.h"
+#import "UIImage+GIF.h"
