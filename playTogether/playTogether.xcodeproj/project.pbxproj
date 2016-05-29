@@ -239,7 +239,6 @@
 				9E216BB51CC478DB00874A7A /* ViewController.swift */,
 				9E216BCB1CC512CF00874A7A /* 发现 */,
 				9E216BCA1CC5115600874A7A /* 个人中心 */,
-				9E216BC91CC5114300874A7A /* 发布 */,
 				9E216BC81CC5112B00874A7A /* 消息 */,
 				442F14CA1CC8C96D004CE917 /* SupportDoc */,
 				9E216BB71CC478DB00874A7A /* Main.storyboard */,
@@ -264,6 +263,7 @@
 		9E216BC81CC5112B00874A7A /* 消息 */ = {
 			isa = PBXGroup;
 			children = (
+				9E216BC91CC5114300874A7A /* 发布 */,
 				9E216BCE1CC516C200874A7A /* MessageCenterViewController.swift */,
 			);
 			name = "消息";

@@ -15,32 +15,60 @@ class PersonCenterViewController: UIViewController {
     // 懒加载
     lazy var tableView: UITableView = {
         let table = UITableView()
-        table.frame = CGRect(x: 0, y: -64, width: UIScreen.mainScreen().bounds.width, height: UIScreen.mainScreen().bounds.height+64)
+        // 头部的开始
+        table.frame = CGRect(x: 0, y: 0, width: UIScreen.mainScreen().bounds.width, height: UIScreen.mainScreen().bounds.height)
         table.delegate = self
         table.dataSource = self
         return table
     }()
-    
+    //背景图片
     lazy var headImage: UIImageView = {
         let imageView = UIImageView(image: UIImage(named: "fight"))
         imageView.frame.size.width = UIScreen.mainScreen().bounds.size.width
         imageView.frame.size.height = 200
         return imageView
     }()
-    
+    //头像
     lazy var accountImg: UIImageView = {
-        let image: UIImageView = UIImageView(image: UIImage(named: "fight"))
-        image.frame = CGRect(x: UIScreen.mainScreen().bounds.width*2/3, y: 30, width: 80, height: 80)
-        image.layer.cornerRadius = 40
+        let image: UIImageView = UIImageView(image: UIImage(named: "hm"))
+        image.frame = CGRect(x: UIScreen.mainScreen().bounds.width*1/2-50, y: 15, width: 100, height: 100)
+        image.layer.cornerRadius = 50
         image.clipsToBounds = true
         return image
     }()
-    
+    lazy var Plable: UILabel = {
+        let label=UILabel(frame:CGRectMake(0,160, UIScreen.mainScreen().bounds.width*1/2, 40))
+        label.text="发起的活动:123"
+        label.textColor=UIColor.whiteColor()  //白色文字
+        label.backgroundColor=UIColor.blackColor() //黑色背景
+        label.textAlignment=NSTextAlignment.Center //文字右对齐
+ 
+        return label
+    }()
+    lazy var Plable2: UILabel = {
+        let label2=UILabel(frame:CGRectMake(UIScreen.mainScreen().bounds.width*1/2,160, UIScreen.mainScreen().bounds.width*1/2, 40))
+        label2.text="参与的活动:342"
+        label2.textColor=UIColor.whiteColor()  //白色文字
+        label2.backgroundColor=UIColor.blackColor() //黑色背景
+        label2.textAlignment=NSTextAlignment.Center //文字右对齐
+        
+        return label2
+    }()
+    lazy var Plable3: UILabel = {
+        let label3=UILabel(frame:CGRectMake(UIScreen.mainScreen().bounds.width*1/2-70,120, 140, 30))
+        label3.text="张三 ♂ 💎"
+        label3.textColor=UIColor.whiteColor()  //白色文字
+       
+        label3.textAlignment=NSTextAlignment.Center //文字右对齐
+        
+        return label3
+    }()
+    //基本信息
     lazy var data: NSArray = {
         let arr = NSArray(contentsOfFile: NSBundle.mainBundle().pathForResource("data", ofType: "plist")!)!
         return arr
     }()
-    
+    //图片选择器
     lazy var picker: UIImagePickerController = {
         let pick: UIImagePickerController = UIImagePickerController()
         pick.view.backgroundColor = UIColor.grayColor()
@@ -53,7 +81,7 @@ class PersonCenterViewController: UIViewController {
         let alertCon = UIAlertController(title: "图片选取方式", message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
         return alertCon
     }()
-    
+    //入口
     override func viewDidLoad() {
         super.viewDidLoad()
         perpareUI()
@@ -86,13 +114,17 @@ class PersonCenterViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "取消", style: UIAlertActionStyle.Cancel, handler: { (alert) -> Void in
             self.dismissViewControllerAnimated(true, completion: nil)
         }))
-        
+        //用户hidden??
         accountImg.userInteractionEnabled = true
         headImage.userInteractionEnabled = true
-        
+        //应该写成背景图片换图片????
         let panGesture = UITapGestureRecognizer(target: self, action: "headImgClicked:")
         accountImg.addGestureRecognizer(panGesture)
         
+        
+        headImage.addSubview(Plable)
+         headImage.addSubview(Plable2)
+        headImage.addSubview(Plable3)
         headImage.addSubview(accountImg)
         
         tableView.tableHeaderView = headImage
@@ -141,7 +173,7 @@ extension PersonCenterViewController {
 // MARK: - 实现UITableView的代理方法
 extension PersonCenterViewController:  UITableViewDelegate, UITableViewDataSource {
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 2
+        return 1
     }
     
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -164,31 +196,33 @@ extension PersonCenterViewController:  UITableViewDelegate, UITableViewDataSourc
         let cell = UITableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: cellId)
         
         // 取消选中效果
-        cell.selectionStyle = UITableViewCellSelectionStyle.None
+        //cell.selectionStyle = UITableViewCellSelectionStyle.None
         
-        if(indexPath.section == 0) {
+       
             cell.textLabel?.text = self.data[indexPath.row][0] as? String
             cell.detailTextLabel?.text = self.data[indexPath.row][1] as? String
-        }else {
-            cell.textLabel?.text = "重庆\(indexPath.row + 1)中"
-            cell.detailTextLabel?.text = "万州\(indexPath.row + 1)中"
-        }
+            let image2 = UIImage(named:"iconfont-user")
+            cell.imageView?.image = image2
+      
+        
         return cell
+    
     }
 }
 
+
 // MARK: - 实现UIScrollView的代理方法
-extension PersonCenterViewController: UIScrollViewDelegate {
-    func scrollViewDidScroll(scrollView: UIScrollView) {
-        let contentOffSet: CGFloat = self.tableView.contentOffset.y
-        if(contentOffSet < 72) {
-            self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "bg"), forBarMetrics: UIBarMetrics.Default)
-        }else {
-            self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "bg4"), forBarMetrics: UIBarMetrics.Default)
-        }
-        
-    }
-}
+//extension PersonCenterViewController: UIScrollViewDelegate {
+//    func scrollViewDidScroll(scrollView: UIScrollView) {
+//        let contentOffSet: CGFloat = self.tableView.contentOffset.y
+//        if(contentOffSet < 72) {
+//            self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "bg"), forBarMetrics: UIBarMetrics.Default)
+//        }else {
+//            self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "bg4"), forBarMetrics: UIBarMetrics.Default)
+//        }
+//        
+//    }
+//}
 
 // MARK: - UIImagePickerControllerDelegate代理实现
 extension PersonCenterViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {

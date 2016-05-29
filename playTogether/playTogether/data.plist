@@ -3,20 +3,20 @@
 <plist version="1.0">
 <array>
 	<array>
-		<string>账号</string>
-		<string>Mr.洛洛</string>
+		<string>我的活动</string>
+		<string>&gt;</string>
 	</array>
 	<array>
-		<string>性别</string>
-		<string>男</string>
+		<string>我的收藏</string>
+		<string>&gt;</string>
 	</array>
 	<array>
-		<string>联系电话</string>
-		<string>181561511415</string>
+		<string>我的资料</string>
+		<string>&gt;</string>
 	</array>
 	<array>
-		<string>QQ邮箱</string>
-		<string>123456798@qq.com</string>
+		<string>设置</string>
+		<string>&gt;</string>
 	</array>
 </array>
 </plist>
