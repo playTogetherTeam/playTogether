@@ -82,6 +82,10 @@ class HomeViewController: UIViewController ,SegmentViewDelegate,BannerViewDelega
 
     }
     
+    func experHeadView(headView: BannerView, didClickImageViewAtIndex index: Int){
+    
+    }
+    
     func loadData()
     {
         //默认显示0行

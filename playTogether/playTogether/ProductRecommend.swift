@@ -82,7 +82,7 @@ class ProductRecommend: NSObject {
         //从data数组汇总解析出 bannerArray
         let bannerArr = dataArr.objectForKey("banner") as! NSArray
         
-        for(var i:Int = 0;i < bannerArr.count ;i++)
+        for(var i:Int = 0;i < bannerArr.count ;i += 1)
         {
             //从topicArray中解析出 model
             let obj = bannerArr[i]

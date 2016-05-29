@@ -17,6 +17,7 @@ private let bannerWidth = SCREEN_WIDTH
 protocol BannerViewDelegate:NSObjectProtocol
 {
     func bannerButtonClicked(clickType:Int)
+    func experHeadView(headView: BannerView, didClickImageViewAtIndex index: Int)
 }
 
 class BannerView: UIView,UIScrollViewDelegate {
@@ -91,6 +92,10 @@ class BannerView: UIView,UIScrollViewDelegate {
             let imageView = UIImageView(frame: CGRectMake(SCREEN_WIDTH*CGFloat(index+1), 0, SCREEN_WIDTH, 324/2))
             
             imageView.sd_setImageWithURL(NSURL(string: bannerModel.imageUrl), placeholderImage:UIImage(named: "placeHolder.jpg"))
+            
+            let tap = UITapGestureRecognizer(target: self, action: "imageClick:")
+            imageView.userInteractionEnabled = true
+            imageView.addGestureRecognizer(tap)
             showScrollView.addSubview(imageView)
             
         }
@@ -126,7 +131,9 @@ class BannerView: UIView,UIScrollViewDelegate {
         //NSDefaultRunLoopMode  会暂停timer
     }
     
-    
+    func imageClick(tap: UITapGestureRecognizer) {
+        delegate?.experHeadView(self, didClickImageViewAtIndex: tap.view!.tag - 1000)
+    }
     
     ///创建首页 四个 button
     func createButton()
@@ -205,5 +212,7 @@ class BannerView: UIView,UIScrollViewDelegate {
     {
             delegate?.bannerButtonClicked(sender.tag)
     }
+    
+    
     
 }
