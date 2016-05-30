@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ReleaseViewController: BaseViewController , UITextFieldDelegate ,UITextViewDelegate{
+class ReleaseViewController: BaseViewController , UITextFieldDelegate ,UITextViewDelegate,UIScrollViewDelegate{
     var txtTitle:UITextField!
     var txtTime:UITextField!
     var txtPnum:UITextField!

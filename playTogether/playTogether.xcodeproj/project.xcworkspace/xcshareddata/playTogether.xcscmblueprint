@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "2CFEBA53CC0B47497FA8AFA5FC492E951F92E32D",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "2CFEBA53CC0B47497FA8AFA5FC492E951F92E32D" : 0,
+    "885E8163DB57F95F70A1A66E39A6A23544E34F2A" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "245A4FBB-40CF-481D-A51C-70CCD11974AE",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "2CFEBA53CC0B47497FA8AFA5FC492E951F92E32D" : "playTogether\/",
+    "885E8163DB57F95F70A1A66E39A6A23544E34F2A" : "SmallDay\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "playTogether",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "playTogether\/playTogether.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/playTogetherTeam\/playTogether.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "2CFEBA53CC0B47497FA8AFA5FC492E951F92E32D"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/ZhongTaoTian\/SmallDay.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "885E8163DB57F95F70A1A66E39A6A23544E34F2A"
+    }
+  ]
+}

@@ -119,7 +119,9 @@ class PersonCenterViewController: UIViewController {
         headImage.userInteractionEnabled = true
         //应该写成背景图片换图片????
         let panGesture = UITapGestureRecognizer(target: self, action: "headImgClicked:")
-        accountImg.addGestureRecognizer(panGesture)
+        let panGesture2 = UITapGestureRecognizer(target: self, action: "headImgClicked2:")
+        accountImg.addGestureRecognizer(panGesture2)
+       headImage.addGestureRecognizer(panGesture)
         
         
         headImage.addSubview(Plable)
@@ -143,6 +145,14 @@ class PersonCenterViewController: UIViewController {
 extension PersonCenterViewController {
     func headImgClicked(sender: UITapGestureRecognizer) {
         self.presentViewController(alert, animated: true, completion: nil)
+    }
+    func headImgClicked2(sender: UITapGestureRecognizer) {
+        
+        //马腾改
+        let plantGrassVC = ReleaseViewController(leftTitle: "", rightTitle: "")
+       //self.presentViewController(plantGrassVC, animated: true, completion: nil)
+      self.navigationController!.pushViewController(plantGrassVC, animated:true)
+       // self.presentViewController(ReleaseViewController, animated: true, completion: nil)
     }
     
     /**
@@ -197,12 +207,17 @@ extension PersonCenterViewController:  UITableViewDelegate, UITableViewDataSourc
         
         // 取消选中效果
         //cell.selectionStyle = UITableViewCellSelectionStyle.None
-        
+//        if(indexPath.section == 0) {
        
             cell.textLabel?.text = self.data[indexPath.row][0] as? String
             cell.detailTextLabel?.text = self.data[indexPath.row][1] as? String
             let image2 = UIImage(named:"iconfont-user")
             cell.imageView?.image = image2
+//        }else{
+//            cell.textLabel?.text = "重庆\(indexPath.row + 1)中"
+//            cell.detailTextLabel?.text = "万州\(indexPath.row + 1)中"
+//
+//        }
       
         
         return cell
