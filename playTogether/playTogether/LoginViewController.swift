@@ -10,10 +10,10 @@
 import UIKit
 import Foundation
 
-public let NavigationH: CGFloat = 64
+public let NavigationHH: CGFloat = 64
 public let AppWidth: CGFloat = UIScreen.mainScreen().bounds.size.width
 public let AppHeight: CGFloat = UIScreen.mainScreen().bounds.size.height
-public let MainBounds: CGRect = UIScreen.mainScreen().bounds
+public let MainBound: CGRect = UIScreen.mainScreen().bounds
 
 public let SD_UserLogin_Notification = "SD_UserLogin_Notification"
 public let SD_UserDefaults_Account = "SD_UserDefaults_Account"
@@ -51,6 +51,9 @@ class LoginViewController: UIViewController, UIScrollViewDelegate {
         // 添加键盘通知
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillChangeFrameNotification:", name: UIKeyboardWillChangeFrameNotification, object: nil)
     }
+    
+
+    
     
     deinit {
         NSNotificationCenter.defaultCenter().removeObserver(self)
@@ -209,7 +212,7 @@ class LoginViewController: UIViewController, UIScrollViewDelegate {
         let rect = userinfo[UIKeyboardFrameEndUserInfoKey]!.CGRectValue
         var boardH = AppHeight - rect.origin.y
         if boardH > 0 {
-            boardH = boardH + NavigationH
+            boardH = boardH + NavigationHH
         }
         backScrollView.contentSize = CGSizeMake(0, view.frame.size.height + boardH)
     }

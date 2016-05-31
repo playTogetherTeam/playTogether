@@ -149,9 +149,12 @@ extension PersonCenterViewController {
     func headImgClicked2(sender: UITapGestureRecognizer) {
         
         //马腾改
-        let plantGrassVC = ReleaseViewController(leftTitle: "", rightTitle: "")
+        
+        let plantGrassVC = LoginViewController()
+          self.hidesBottomBarWhenPushed = true
        //self.presentViewController(plantGrassVC, animated: true, completion: nil)
       self.navigationController!.pushViewController(plantGrassVC, animated:true)
+        self.hidesBottomBarWhenPushed = false
        // self.presentViewController(ReleaseViewController, animated: true, completion: nil)
     }
     

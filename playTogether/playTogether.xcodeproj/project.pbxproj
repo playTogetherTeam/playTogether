@@ -29,8 +29,10 @@
 		44F61F121CE7011000850B6E /* SegmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F61F111CE7011000850B6E /* SegmentView.swift */; };
 		9E15C69A1CECC41D001D6482 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E15C6991CECC41D001D6482 /* BaseNavigationController.swift */; };
 		9E15C69C1CECC42A001D6482 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E15C69B1CECC42A001D6482 /* BaseViewController.swift */; };
+		9E15C6CA1CFC810F001D6482 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E15C6C71CFC810F001D6482 /* LoginViewController.swift */; };
+		9E15C6CB1CFC810F001D6482 /* String+Hash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E15C6C81CFC810F001D6482 /* String+Hash.swift */; };
+		9E15C6CC1CFC810F001D6482 /* String+wnxString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E15C6C91CFC810F001D6482 /* String+wnxString.swift */; };
 		9E216BB41CC478DB00874A7A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E216BB31CC478DB00874A7A /* AppDelegate.swift */; };
-		9E216BB61CC478DB00874A7A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E216BB51CC478DB00874A7A /* ViewController.swift */; };
 		9E216BB91CC478DB00874A7A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E216BB71CC478DB00874A7A /* Main.storyboard */; };
 		9E216BBB1CC478DB00874A7A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E216BBA1CC478DB00874A7A /* Assets.xcassets */; };
 		9E216BBE1CC478DB00874A7A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E216BBC1CC478DB00874A7A /* LaunchScreen.storyboard */; };
@@ -82,9 +84,11 @@
 		44F61F111CE7011000850B6E /* SegmentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentView.swift; sourceTree = "<group>"; };
 		9E15C6991CECC41D001D6482 /* BaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		9E15C69B1CECC42A001D6482 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		9E15C6C71CFC810F001D6482 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		9E15C6C81CFC810F001D6482 /* String+Hash.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Hash.swift"; sourceTree = "<group>"; };
+		9E15C6C91CFC810F001D6482 /* String+wnxString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+wnxString.swift"; sourceTree = "<group>"; };
 		9E216BB01CC478DB00874A7A /* playTogether.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = playTogether.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E216BB31CC478DB00874A7A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9E216BB51CC478DB00874A7A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9E216BB81CC478DB00874A7A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9E216BBA1CC478DB00874A7A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9E216BBD1CC478DB00874A7A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -215,6 +219,16 @@
 			name = BaseNavigationController;
 			sourceTree = "<group>";
 		};
+		9E15C6C61CFC80E8001D6482 /* 登录 */ = {
+			isa = PBXGroup;
+			children = (
+				9E15C6C71CFC810F001D6482 /* LoginViewController.swift */,
+				9E15C6C81CFC810F001D6482 /* String+Hash.swift */,
+				9E15C6C91CFC810F001D6482 /* String+wnxString.swift */,
+			);
+			name = "登录";
+			sourceTree = "<group>";
+		};
 		9E216BA71CC478DB00874A7A = {
 			isa = PBXGroup;
 			children = (
@@ -234,9 +248,9 @@
 		9E216BB21CC478DB00874A7A /* playTogether */ = {
 			isa = PBXGroup;
 			children = (
+				9E15C6C61CFC80E8001D6482 /* 登录 */,
 				9E216BB31CC478DB00874A7A /* AppDelegate.swift */,
 				9E216BC51CC48A2100874A7A /* 首页 */,
-				9E216BB51CC478DB00874A7A /* ViewController.swift */,
 				9E216BCB1CC512CF00874A7A /* 发现 */,
 				9E216BC91CC5114300874A7A /* 发布 */,
 				9E216BCA1CC5115600874A7A /* 个人中心 */,
@@ -367,8 +381,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E15C6CA1CFC810F001D6482 /* LoginViewController.swift in Sources */,
 				44BC62971CEC5D96004F1913 /* UIImage+GIF.m in Sources */,
-				9E216BB61CC478DB00874A7A /* ViewController.swift in Sources */,
 				44BC62951CEC5D96004F1913 /* SDWebImagePrefetcher.m in Sources */,
 				442F14D31CC8CE06004CE917 /* UIColor+Hex.m in Sources */,
 				9E216BD31CC5176F00874A7A /* ReleaseViewController.swift in Sources */,
@@ -388,11 +402,13 @@
 				445583331CEC5986007F98E3 /* ProductRecommend.swift in Sources */,
 				445583301CEC5885007F98E3 /* BannerView.swift in Sources */,
 				44BC62921CEC5D96004F1913 /* SDWebImageDownloader.m in Sources */,
+				9E15C6CC1CFC810F001D6482 /* String+wnxString.swift in Sources */,
 				44BC62991CEC5D96004F1913 /* UIImageView+HighlightedWebCache.m in Sources */,
 				44BC62911CEC5D96004F1913 /* SDWebImageDecoder.m in Sources */,
 				44BC62941CEC5D96004F1913 /* SDWebImageManager.m in Sources */,
 				9E15C69A1CECC41D001D6482 /* BaseNavigationController.swift in Sources */,
 				44F61F121CE7011000850B6E /* SegmentView.swift in Sources */,
+				9E15C6CB1CFC810F001D6482 /* String+Hash.swift in Sources */,
 				9E216BCF1CC516C200874A7A /* MessageCenterViewController.swift in Sources */,
 				44BC628F1CEC5D96004F1913 /* SDImageCache.m in Sources */,
 			);
