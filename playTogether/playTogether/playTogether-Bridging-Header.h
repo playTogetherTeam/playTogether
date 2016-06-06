@@ -5,3 +5,5 @@
 #import "UIColor+Hex.h"
 #import "UIImageView+WebCache.h"
 #import "UIImage+GIF.h"
+#import <AVOSCloud/AVOSCloud.h>
+//#import <AVOSCloudIM/AVOSCloudIM.h>

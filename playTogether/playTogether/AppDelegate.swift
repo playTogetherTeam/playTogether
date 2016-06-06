@@ -20,6 +20,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UITabBarControllerDelegate
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+//        [AVOSCloud setApplicationId:@"Vz8DK7xnkeSuq9R3xcDMUwWH-gzGzoHsz"
+//                  clientKey:@"X4oNqoPe6Bl39rulC91GJSd1"];
+        //授权到leancloud
+        AVOSCloud.setApplicationId("Vz8DK7xnkeSuq9R3xcDMUwWH-gzGzoHsz", clientKey: "X4oNqoPe6Bl39rulC91GJSd1")
+        //跟踪应用统计打开状况
+        //AVAnalytics.trackAppOpenedWithLaunchOptions(<#T##launchOptions: [NSObject : AnyObject]!##[NSObject : AnyObject]!#>)
         self.window = UIWindow.init(frame: UIScreen.mainScreen().bounds)
         self.createTabBarController()
         self.window?.rootViewController = mainViewController()
