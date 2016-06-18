@@ -184,3 +184,20 @@ class CateGoryModel {
     var extend:String?
     var photo:String?
 }
+
+class CellModel: NSObject {
+    /// 美辑的url网址
+    var themeurl: String?
+    /// 图片url
+    var img: String?
+    /// cell主标题
+    var title: String?
+    /// 是否有web地址 1是有, 0没有
+    var hasweb: Int = -1
+    /// cell的副标题
+    var keywords: String?
+    /// 美辑的编号
+    var id: Int = -1
+    var text: String?
+    
+}

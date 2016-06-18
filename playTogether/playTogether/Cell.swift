@@ -15,7 +15,7 @@ class Cell: UITableViewCell {
         didSet {
             titleLable.text = model!.title
             subTitleLable.text = model!.keywords
-            backImageView.wxn_setImageWithURL(NSURL(string: model!.img!)!, placeholderImage: UIImage(named: "quesheng")!)
+            backImageView.sd_setImageWithURL(NSURL(string: model!.img!)!, placeholderImage: UIImage(named: "quesheng")!)
         }
     }
     
