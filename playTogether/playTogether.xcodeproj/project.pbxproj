@@ -11,6 +11,8 @@
 		442F14D31CC8CE06004CE917 /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 442F14D21CC8CE06004CE917 /* UIColor+Hex.m */; };
 		445583301CEC5885007F98E3 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4455832F1CEC5885007F98E3 /* BannerView.swift */; };
 		445583331CEC5986007F98E3 /* ProductRecommend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445583321CEC5986007F98E3 /* ProductRecommend.swift */; };
+		44B1D5211D150E580009A578 /* Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44B1D5201D150E580009A578 /* Cell.xib */; };
+		44B1D5231D150EF10009A578 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B1D5221D150EF10009A578 /* Cell.swift */; };
 		44BC628E1CEC5D96004F1913 /* NSData+ImageContentType.m in Sources */ = {isa = PBXBuildFile; fileRef = 44BC62721CEC5D96004F1913 /* NSData+ImageContentType.m */; };
 		44BC628F1CEC5D96004F1913 /* SDImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 44BC62741CEC5D96004F1913 /* SDImageCache.m */; };
 		44BC62901CEC5D96004F1913 /* SDWebImageCompat.m in Sources */ = {isa = PBXBuildFile; fileRef = 44BC62761CEC5D96004F1913 /* SDWebImageCompat.m */; };
@@ -27,7 +29,6 @@
 		44BC629B1CEC5D96004F1913 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 44BC628D1CEC5D96004F1913 /* UIView+WebCacheOperation.m */; };
 		44BC629E1CEC6A2D004F1913 /* app_JSON in Resources */ = {isa = PBXBuildFile; fileRef = 44BC629D1CEC6A2D004F1913 /* app_JSON */; };
 		44F61F121CE7011000850B6E /* SegmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F61F111CE7011000850B6E /* SegmentView.swift */; };
-		5BFB93E5D221BDFD7C198BCD /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F9C514486838D2B33495046B /* libPods.a */; };
 		9E15C69A1CECC41D001D6482 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E15C6991CECC41D001D6482 /* BaseNavigationController.swift */; };
 		9E15C69C1CECC42A001D6482 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E15C69B1CECC42A001D6482 /* BaseViewController.swift */; };
 		9E15C6CA1CFC810F001D6482 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E15C6C71CFC810F001D6482 /* LoginViewController.swift */; };
@@ -61,6 +62,8 @@
 		442F14D21CC8CE06004CE917 /* UIColor+Hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hex.m"; sourceTree = "<group>"; };
 		4455832F1CEC5885007F98E3 /* BannerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
 		445583321CEC5986007F98E3 /* ProductRecommend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductRecommend.swift; sourceTree = "<group>"; };
+		44B1D5201D150E580009A578 /* Cell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Cell.xib; sourceTree = "<group>"; };
+		44B1D5221D150EF10009A578 /* Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		44BC62711CEC5D96004F1913 /* NSData+ImageContentType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSData+ImageContentType.h"; path = "SDWebImage/NSData+ImageContentType.h"; sourceTree = "<group>"; };
 		44BC62721CEC5D96004F1913 /* NSData+ImageContentType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSData+ImageContentType.m"; path = "SDWebImage/NSData+ImageContentType.m"; sourceTree = "<group>"; };
 		44BC62731CEC5D96004F1913 /* SDImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SDImageCache.h; path = SDWebImage/SDImageCache.h; sourceTree = "<group>"; };
@@ -135,7 +138,6 @@
 				9E15C6D31CFE6BCB001D6482 /* AVOSCloudCrashReporting.framework in Frameworks */,
 				9E15C6D21CFE6BCB001D6482 /* AVOSCloud.framework in Frameworks */,
 				9E15C6D41CFE6BCB001D6482 /* AVOSCloudIM.framework in Frameworks */,
-				5BFB93E5D221BDFD7C198BCD /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -184,6 +186,8 @@
 		4455832E1CEC585E007F98E3 /* VIew */ = {
 			isa = PBXGroup;
 			children = (
+				44B1D5201D150E580009A578 /* Cell.xib */,
+				44B1D5221D150EF10009A578 /* Cell.swift */,
 				4455832F1CEC5885007F98E3 /* BannerView.swift */,
 			);
 			name = VIew;
@@ -436,6 +440,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9E216BBE1CC478DB00874A7A /* LaunchScreen.storyboard in Resources */,
+				44B1D5211D150E580009A578 /* Cell.xib in Resources */,
 				9E216BBB1CC478DB00874A7A /* Assets.xcassets in Resources */,
 				44BC629E1CEC6A2D004F1913 /* app_JSON in Resources */,
 				D8C7EE4E1CF178B80080285B /* data.plist in Resources */,
@@ -498,6 +503,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44B1D5231D150EF10009A578 /* Cell.swift in Sources */,
 				9E15C6CA1CFC810F001D6482 /* LoginViewController.swift in Sources */,
 				44BC62971CEC5D96004F1913 /* UIImage+GIF.m in Sources */,
 				44BC62951CEC5D96004F1913 /* SDWebImagePrefetcher.m in Sources */,
