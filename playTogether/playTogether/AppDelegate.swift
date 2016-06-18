@@ -26,6 +26,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UITabBarControllerDelegate
         AVOSCloud.setApplicationId("Vz8DK7xnkeSuq9R3xcDMUwWH-gzGzoHsz", clientKey: "X4oNqoPe6Bl39rulC91GJSd1")
         //跟踪应用统计打开状况
         //AVAnalytics.trackAppOpenedWithLaunchOptions(<#T##launchOptions: [NSObject : AnyObject]!##[NSObject : AnyObject]!#>)
+        //测试
+//        var post:AVObject = object
+//        post.setObject("helloworld", forKey: "hello")
         self.window = UIWindow.init(frame: UIScreen.mainScreen().bounds)
         self.createTabBarController()
         self.window?.rootViewController = mainViewController()

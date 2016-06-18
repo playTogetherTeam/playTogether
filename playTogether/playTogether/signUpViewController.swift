@@ -1,25 +1,24 @@
 //
-//  LoginViewController.swift
-//  SmallDay
-//  项目GitHub地址:         https://github.com/ZhongTaoTian/SmallDay
-//  项目思路和架构讲解博客:    http://www.jianshu.com/p/bcc297e19a94
-//  Created by MacBook on 15/8/20.
-//  Copyright (c) 2015年 维尼的小熊. All rights reserved.
-//  登陆控制器
+//  signUpViewController.swift
+//  playTogether
+//
+//  Created by 马腾 on 16/6/13.
+//  Copyright © 2016年 马腾. All rights reserved.
+//
 
 import UIKit
 import Foundation
 
-public let NavigationHH: CGFloat = 64
-public let AppWidth: CGFloat = UIScreen.mainScreen().bounds.size.width
-public let AppHeight: CGFloat = UIScreen.mainScreen().bounds.size.height
-public let MainBound: CGRect = UIScreen.mainScreen().bounds
+//public let NavigationHH: CGFloat = 64
+//public let AppWidth: CGFloat = UIScreen.mainScreen().bounds.size.width
+//public let AppHeight: CGFloat = UIScreen.mainScreen().bounds.size.height
+//public let MainBound: CGRect = UIScreen.mainScreen().bounds
+//
+//public let SD_UserLogin_Notification = "SD_UserLogin_Notification"
+//public let SD_UserDefaults_Account = "SD_UserDefaults_Account"
+//public let SD_UserDefaults_Password = "SD_UserDefaults_Password"
 
-public let SD_UserLogin_Notification = "SD_UserLogin_Notification"
-public let SD_UserDefaults_Account = "SD_UserDefaults_Account"
-public let SD_UserDefaults_Password = "SD_UserDefaults_Password"
-
-class LoginViewController: UIViewController, UIScrollViewDelegate {
+class signUpViewController: UIViewController, UIScrollViewDelegate {
     
     var bottomView: UIView!
     var backScrollView: UIScrollView!
@@ -46,13 +45,12 @@ class LoginViewController: UIViewController, UIScrollViewDelegate {
         addLoginImageView()
         // 添加快捷登录按钮
         addQuictLoginBtn()
-        // 添加底部忘记密码和注册view
-        addBottomView()
+        
         // 添加键盘通知
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillChangeFrameNotification:", name: UIKeyboardWillChangeFrameNotification, object: nil)
     }
     
-
+    
     
     
     deinit {
@@ -137,74 +135,18 @@ class LoginViewController: UIViewController, UIScrollViewDelegate {
         topView!.addSubview(textField)
     }
     
-    func addBottomView() {
-        let forgetPwdImageViewH: CGFloat = 45
-        
-        bottomView = UIView(frame: CGRectMake((AppWidth - loginW) * 0.5, AppHeight - forgetPwdImageViewH - 10 - 64, loginW, forgetPwdImageViewH))
-        bottomView.backgroundColor = UIColor.clearColor()
-        backScrollView.addSubview(bottomView)
-        
-        forgetPwdImageView = UIImageView()
-        addBottomViewWithImageView(forgetPwdImageView, tag: 10, frame: CGRectMake(0, 0, loginW * 0.5, forgetPwdImageViewH), imageName: "c1_1", title: "忘记密码")
-        
-        registerImageView = UIImageView()
-        addBottomViewWithImageView(registerImageView, tag: 11, frame: CGRectMake(bottomView.frame.size.width * 0.5, 0, loginW * 0.5, forgetPwdImageViewH), imageName: "c1_2", title: "注册")
-    }
+  
     
-    func addBottomViewWithImageView(imageView: UIImageView, tag: Int, frame: CGRect, imageName: String, title: String) {
-        imageView.frame = frame
-        imageView.image = UIImage(named: imageName)
-        imageView.tag = tag
-        imageView.userInteractionEnabled = true
-        
-        let label = UILabel(frame: CGRectMake(0, 0, imageView.frame.size.width, imageView.frame.size.height))
-        label.textAlignment = .Center
-        label.textColor = textCoclor
-        label.text = title
-        label.font = UIFont.systemFontOfSize(15)
-        imageView.addSubview(label)
-        let tap = UITapGestureRecognizer(target: self, action: "bottomViewColcikWith")
-        imageView.addGestureRecognizer(tap)
-        
-        bottomView.addSubview(imageView)
-        
-    }
     
-    /// 底部忘记密码和注册按钮点击
-    func bottomViewColcikWith(tap: UIGestureRecognizer) {
-        if tap.view!.tag == 10 { // 忘记密码
-            print("忘记密码", terminator: "")
-        } else {
-            // 注册
-            //print("注册", terminator: "")
-            //SVProgressHUD.showErrorWithStatus("直接登录就行...没有注册功能", maskType: .Black)
-           // showSignUpViewController(viewController)
-            let toSignUp = signUpViewController()
-            self.hidesBottomBarWhenPushed = true
-            //self.presentViewController(plantGrassVC, animated: true, completion: nil)
-            self.navigationController!.pushViewController(toSignUp, animated:true)
-            //self.hidesBottomBarWhenPushed = false
-            
-            
-            
-            
-        }
-    }
+
     
-//    func showSignUpViewController(viewController:UIViewController) {
-//        let showMeVC = signUpViewController.init(leftTitle: "取消", rightTitle: "完成")
-//        let nav = BaseNavigationController(rootViewController: showMeVC)
-//        LoginViewController.presentViewController(nav, animated: true, completion: nil)
-//    }
-    
-    /// 登录按钮被点击
     func loginClick() {
         
         if !phoneTextField.text!.validateMobile() {
-           // SVProgressHUD.showErrorWithStatus("请输入11位的正确手机号", maskType: SVProgressHUDMaskType.Black)
+            // SVProgressHUD.showErrorWithStatus("请输入11位的正确手机号", maskType: SVProgressHUDMaskType.Black)
             return
         } else if psdTextField.text!.isEmpty {
-          //  SVProgressHUD.showErrorWithStatus("密码不能为空", maskType: SVProgressHUDMaskType.Black)
+            //  SVProgressHUD.showErrorWithStatus("密码不能为空", maskType: SVProgressHUDMaskType.Black)
             return
         }
         
@@ -243,10 +185,24 @@ class LoginViewController: UIViewController, UIScrollViewDelegate {
 
 
 // UIColor的扩展
-extension UIColor {
-    class func colorWith(red: Int, green: Int, blue: Int, alpha: CGFloat) -> UIColor {
-        let color = UIColor(red: CGFloat(red) / 255.0, green: CGFloat(green) / 255.0, blue: CGFloat(blue) / 255.0, alpha: alpha)
-        return color
-    }
+//extension UIColor {
+//    class func colorWith(red: Int, green: Int, blue: Int, alpha: CGFloat) -> UIColor {
+//        let color = UIColor(red: CGFloat(red) / 255.0, green: CGFloat(green) / 255.0, blue: CGFloat(blue) / 255.0, alpha: alpha)
+//        return color
+//    }
+//    
+//}
+
     
-}
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    */
+
+

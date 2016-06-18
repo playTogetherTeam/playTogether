@@ -49,6 +49,8 @@
 		9E216BCF1CC516C200874A7A /* MessageCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E216BCE1CC516C200874A7A /* MessageCenterViewController.swift */; };
 		9E216BD11CC5172B00874A7A /* PersonCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E216BD01CC5172B00874A7A /* PersonCenterViewController.swift */; };
 		9E216BD31CC5176F00874A7A /* ReleaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E216BD21CC5176F00874A7A /* ReleaseViewController.swift */; };
+		9EB9CFFA1D07028E003C1CF0 /* LoginMember.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB9CFF91D07028E003C1CF0 /* LoginMember.swift */; };
+		9EB9CFFC1D0EF18E003C1CF0 /* signUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB9CFFB1D0EF18E003C1CF0 /* signUpViewController.swift */; };
 		D8C7EE4E1CF178B80080285B /* data.plist in Resources */ = {isa = PBXBuildFile; fileRef = D8C7EE4D1CF178B80080285B /* data.plist */; };
 /* End PBXBuildFile section */
 
@@ -114,6 +116,8 @@
 		9E216BCE1CC516C200874A7A /* MessageCenterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageCenterViewController.swift; sourceTree = "<group>"; };
 		9E216BD01CC5172B00874A7A /* PersonCenterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonCenterViewController.swift; sourceTree = "<group>"; };
 		9E216BD21CC5176F00874A7A /* ReleaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReleaseViewController.swift; sourceTree = "<group>"; };
+		9EB9CFF91D07028E003C1CF0 /* LoginMember.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginMember.swift; sourceTree = "<group>"; };
+		9EB9CFFB1D0EF18E003C1CF0 /* signUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = signUpViewController.swift; sourceTree = "<group>"; };
 		BC0C92639D45DEC1A03DF9AD /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		D8C7EE4D1CF178B80080285B /* data.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = data.plist; sourceTree = "<group>"; };
 		F9C514486838D2B33495046B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -260,6 +264,8 @@
 				9E15C6C71CFC810F001D6482 /* LoginViewController.swift */,
 				9E15C6C81CFC810F001D6482 /* String+Hash.swift */,
 				9E15C6C91CFC810F001D6482 /* String+wnxString.swift */,
+				9EB9CFF91D07028E003C1CF0 /* LoginMember.swift */,
+				9EB9CFFB1D0EF18E003C1CF0 /* signUpViewController.swift */,
 			);
 			name = "登录";
 			sourceTree = "<group>";
@@ -500,7 +506,9 @@
 				9E15C69C1CECC42A001D6482 /* BaseViewController.swift in Sources */,
 				44BC628E1CEC5D96004F1913 /* NSData+ImageContentType.m in Sources */,
 				9E216BCD1CC5145200874A7A /* DiscoverViewController.swift in Sources */,
+				9EB9CFFA1D07028E003C1CF0 /* LoginMember.swift in Sources */,
 				44BC629A1CEC5D96004F1913 /* UIImageView+WebCache.m in Sources */,
+				9EB9CFFC1D0EF18E003C1CF0 /* signUpViewController.swift in Sources */,
 				9E216BB41CC478DB00874A7A /* AppDelegate.swift in Sources */,
 				44BC62961CEC5D96004F1913 /* UIButton+WebCache.m in Sources */,
 				44BC62931CEC5D96004F1913 /* SDWebImageDownloaderOperation.m in Sources */,
