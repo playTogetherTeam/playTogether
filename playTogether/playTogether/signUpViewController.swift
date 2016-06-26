@@ -25,27 +25,60 @@ class signUpViewController: UIViewController, UIScrollViewDelegate {
     var topView: UIView!
     var phoneTextField: UITextField!
     var psdTextField: UITextField!
+    var psdTextFieldConfirm: UITextField!
     var loginImageView: UIImageView!
     var quickLoginBtn: UIButton!
     var forgetPwdImageView: UIImageView!
     var registerImageView: UIImageView!
     let textCoclor: UIColor = UIColor.colorWith(50, green: 50, blue: 50, alpha: 1)
     let loginW: CGFloat = 250
+   //时间返回按钮
+    var sendButton: UIButton!
+    
+    var countdownTimer: NSTimer?
+    
+    var remainingSeconds: Int = 0 {
+        willSet {
+            sendButton.setTitle("验证码已发送(\(newValue)秒后重新获取)", forState: .Normal)
+            
+            if newValue <= 0 {
+                sendButton.setTitle("重新获取验证码", forState: .Normal)
+                isCounting = false
+            }
+        }
+    }
+    
+    var isCounting = false {
+        willSet {
+            if newValue {
+                countdownTimer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "updateTime:", userInfo: nil, repeats: true)
+                
+                remainingSeconds = 5
+                
+                sendButton.backgroundColor = UIColor.grayColor()
+            } else {
+                countdownTimer?.invalidate()
+                countdownTimer = nil
+                
+                sendButton.backgroundColor = UIColor.redColor()
+            }
+            
+            sendButton.enabled = !newValue
+        }
+    }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.title = "登录"
+        navigationItem.title = "注册"
         view.backgroundColor = UIColor.colorWith(245, green: 245, blue: 245, alpha: 1)
         //添加scrollView
         addScrollView()
         // 添加手机文本框和密码文本框
         addTextField()
-        // 添加登录View
+        // 添加注册View
         addLoginImageView()
-        // 添加快捷登录按钮
-        addQuictLoginBtn()
-        
         // 添加键盘通知
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillChangeFrameNotification:", name: UIKeyboardWillChangeFrameNotification, object: nil)
     }
@@ -56,6 +89,10 @@ class signUpViewController: UIViewController, UIScrollViewDelegate {
     deinit {
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
+    
+  
+    
+  
     
     func addScrollView() {
         backScrollView = UIScrollView(frame: view.bounds)
@@ -73,7 +110,7 @@ class signUpViewController: UIViewController, UIScrollViewDelegate {
         loginImageView.image = UIImage(named: "signin_1")
         
         let loginLabel = UILabel(frame: loginImageView.bounds)
-        loginLabel.text = "登  录"
+        loginLabel.text = "注 册"
         loginLabel.textAlignment = .Center
         loginLabel.textColor = textCoclor
         loginLabel.font = UIFont.systemFontOfSize(22)
@@ -89,7 +126,7 @@ class signUpViewController: UIViewController, UIScrollViewDelegate {
         let textH: CGFloat = 55
         let leftMargin: CGFloat = 10
         let alphaV: CGFloat = 0.2
-        topView = UIView(frame: CGRectMake(0, 20, AppWidth, textH * 2))
+        topView = UIView(frame: CGRectMake(0, 20, AppWidth, textH * 3))
         topView?.backgroundColor = UIColor.whiteColor()
         backScrollView.addSubview(topView!)
         
@@ -107,24 +144,39 @@ class signUpViewController: UIViewController, UIScrollViewDelegate {
         line2.alpha = alphaV
         topView!.addSubview(line2)
         
+//        let line3 = UIView(frame: CGRectMake(0, textH * 2, AppWidth, 1))
+//        line3.backgroundColor = UIColor.grayColor()
+//        line3.alpha = alphaV
+//        topView!.addSubview(line3)
+        
         psdTextField = UITextField()
-        addTextFieldToTopViewWiht(psdTextField!, frame: CGRectMake(leftMargin, textH + 1, AppWidth - leftMargin, textH - 1), placeholder: "密码")
+        addTextFieldToTopViewWiht(psdTextField!, frame: CGRectMake(leftMargin, textH + 1, AppWidth - leftMargin, textH - 1), placeholder: "验证码")
+        
+        sendButton = UIButton()
+        sendButton.frame = CGRect(x: 5, y: textH * 2 + 20, width: AppWidth - leftMargin, height: textH - 1)
+        sendButton.backgroundColor = UIColor.redColor()
+        sendButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+        sendButton.setTitle("获取验证码", forState: .Normal)
+        sendButton.addTarget(self, action: "sendButtonClick:", forControlEvents: .TouchUpInside)
+        
+        self.view.addSubview(sendButton)
+        
+        
+        
+        
+//        psdTextFieldConfirm = UITextField()
+//        addTextFieldToTopViewWiht(psdTextFieldConfirm!, frame: CGRectMake(leftMargin, textH * 2 + 1, AppWidth - leftMargin, textH - 1), placeholder: "重复密码")
     }
     
-    func addQuictLoginBtn() {
-        quickLoginBtn = UIButton()
-        quickLoginBtn.setTitle("无账号快捷登录", forState: .Normal)
-        quickLoginBtn.titleLabel?.sizeToFit()
-        quickLoginBtn.contentMode = .Right
-        let quickW: CGFloat = quickLoginBtn.titleLabel!.frame.size.width
-        quickLoginBtn.frame = CGRectMake(AppWidth - quickW - 10, CGRectGetMaxY(loginImageView.frame) + 10, quickW, 30)
-        quickLoginBtn.titleLabel?.font = UIFont.systemFontOfSize(14)
-        quickLoginBtn.addTarget(self, action: "quickLoginClick", forControlEvents: .TouchUpInside)
-        quickLoginBtn.setTitle("无账号快捷登录", forState: .Normal)
-        quickLoginBtn.setTitleColor(textCoclor, forState: .Normal)
-        quickLoginBtn.setTitleColor(UIColor.lightGrayColor(), forState: .Highlighted)
-        backScrollView.addSubview(quickLoginBtn)
+    func sendButtonClick(sender: UIButton) {
+        isCounting = true
     }
+    
+    func updateTime(timer: NSTimer) {
+        remainingSeconds -= 1
+    }
+    
+
     
     func addTextFieldToTopViewWiht(textField: UITextField ,frame: CGRect, placeholder: String) {
         textField.frame = frame
@@ -142,28 +194,14 @@ class signUpViewController: UIViewController, UIScrollViewDelegate {
     
     func loginClick() {
         
-        if !phoneTextField.text!.validateMobile() {
-            // SVProgressHUD.showErrorWithStatus("请输入11位的正确手机号", maskType: SVProgressHUDMaskType.Black)
-            return
-        } else if psdTextField.text!.isEmpty {
-            //  SVProgressHUD.showErrorWithStatus("密码不能为空", maskType: SVProgressHUDMaskType.Black)
-            return
-        }
-        
-        //将用户的账号和密码暂时保存到本地,实际开发中光用MD5加密是不够的,需要多重加密
-        let account = phoneTextField.text
-        let psdMD5 = psdTextField.text!.md5
-        NSUserDefaults.standardUserDefaults().setObject(account, forKey: SD_UserDefaults_Account)
-        NSUserDefaults.standardUserDefaults().setObject(psdMD5, forKey: SD_UserDefaults_Password)
-        if NSUserDefaults.standardUserDefaults().synchronize() {
-            navigationController?.popViewControllerAnimated(true)
-        }
+        let toConfirmPsd = confirmPsdViewController()
+        self.hidesBottomBarWhenPushed = true
+        //self.presentViewController(plantGrassVC, animated: true, completion: nil)
+        self.navigationController!.pushViewController(toConfirmPsd, animated:true)
+        //self.hidesBottomBarWhenPushed = false
     }
     
-    /// 快捷登录点击
-    func quickLoginClick() {
-        print("快捷登陆", terminator: "")
-    }
+   
     
     func keyboardWillChangeFrameNotification(note: NSNotification) {
         // TODO 添加键盘弹出的事件

@@ -163,7 +163,7 @@ class LoginViewController: UIViewController, UIScrollViewDelegate {
         label.text = title
         label.font = UIFont.systemFontOfSize(15)
         imageView.addSubview(label)
-        let tap = UITapGestureRecognizer(target: self, action: "bottomViewColcikWith")
+        let tap = UITapGestureRecognizer(target: self, action: "bottomViewColcikWith:")
         imageView.addGestureRecognizer(tap)
         
         bottomView.addSubview(imageView)

@@ -52,6 +52,7 @@
 		9E216BD31CC5176F00874A7A /* ReleaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E216BD21CC5176F00874A7A /* ReleaseViewController.swift */; };
 		9EB9CFFA1D07028E003C1CF0 /* LoginMember.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB9CFF91D07028E003C1CF0 /* LoginMember.swift */; };
 		9EB9CFFC1D0EF18E003C1CF0 /* signUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB9CFFB1D0EF18E003C1CF0 /* signUpViewController.swift */; };
+		9EB9CFFE1D194B19003C1CF0 /* confirmPsdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB9CFFD1D194B19003C1CF0 /* confirmPsdViewController.swift */; };
 		D8C7EE4E1CF178B80080285B /* data.plist in Resources */ = {isa = PBXBuildFile; fileRef = D8C7EE4D1CF178B80080285B /* data.plist */; };
 /* End PBXBuildFile section */
 
@@ -121,6 +122,7 @@
 		9E216BD21CC5176F00874A7A /* ReleaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReleaseViewController.swift; sourceTree = "<group>"; };
 		9EB9CFF91D07028E003C1CF0 /* LoginMember.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginMember.swift; sourceTree = "<group>"; };
 		9EB9CFFB1D0EF18E003C1CF0 /* signUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = signUpViewController.swift; sourceTree = "<group>"; };
+		9EB9CFFD1D194B19003C1CF0 /* confirmPsdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = confirmPsdViewController.swift; sourceTree = "<group>"; };
 		BC0C92639D45DEC1A03DF9AD /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		D8C7EE4D1CF178B80080285B /* data.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = data.plist; sourceTree = "<group>"; };
 		F9C514486838D2B33495046B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -270,6 +272,7 @@
 				9E15C6C91CFC810F001D6482 /* String+wnxString.swift */,
 				9EB9CFF91D07028E003C1CF0 /* LoginMember.swift */,
 				9EB9CFFB1D0EF18E003C1CF0 /* signUpViewController.swift */,
+				9EB9CFFD1D194B19003C1CF0 /* confirmPsdViewController.swift */,
 			);
 			name = "登录";
 			sourceTree = "<group>";
@@ -528,6 +531,7 @@
 				445583301CEC5885007F98E3 /* BannerView.swift in Sources */,
 				44BC62921CEC5D96004F1913 /* SDWebImageDownloader.m in Sources */,
 				9E15C6CC1CFC810F001D6482 /* String+wnxString.swift in Sources */,
+				9EB9CFFE1D194B19003C1CF0 /* confirmPsdViewController.swift in Sources */,
 				44BC62991CEC5D96004F1913 /* UIImageView+HighlightedWebCache.m in Sources */,
 				44BC62911CEC5D96004F1913 /* SDWebImageDecoder.m in Sources */,
 				44BC62941CEC5D96004F1913 /* SDWebImageManager.m in Sources */,
