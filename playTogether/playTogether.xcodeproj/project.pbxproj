@@ -53,7 +53,6 @@
 		9EB9CFFA1D07028E003C1CF0 /* LoginMember.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB9CFF91D07028E003C1CF0 /* LoginMember.swift */; };
 		9EB9CFFC1D0EF18E003C1CF0 /* signUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB9CFFB1D0EF18E003C1CF0 /* signUpViewController.swift */; };
 		9EB9CFFE1D194B19003C1CF0 /* confirmPsdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB9CFFD1D194B19003C1CF0 /* confirmPsdViewController.swift */; };
-		D8C7EE4E1CF178B80080285B /* data.plist in Resources */ = {isa = PBXBuildFile; fileRef = D8C7EE4D1CF178B80080285B /* data.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -124,7 +123,6 @@
 		9EB9CFFB1D0EF18E003C1CF0 /* signUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = signUpViewController.swift; sourceTree = "<group>"; };
 		9EB9CFFD1D194B19003C1CF0 /* confirmPsdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = confirmPsdViewController.swift; sourceTree = "<group>"; };
 		BC0C92639D45DEC1A03DF9AD /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		D8C7EE4D1CF178B80080285B /* data.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = data.plist; sourceTree = "<group>"; };
 		F9C514486838D2B33495046B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -367,7 +365,6 @@
 		9E216BCA1CC5115600874A7A /* 个人中心 */ = {
 			isa = PBXGroup;
 			children = (
-				D8C7EE4D1CF178B80080285B /* data.plist */,
 				9E216BD01CC5172B00874A7A /* PersonCenterViewController.swift */,
 			);
 			name = "个人中心";
@@ -446,7 +443,6 @@
 				44B1D5211D150E580009A578 /* Cell.xib in Resources */,
 				9E216BBB1CC478DB00874A7A /* Assets.xcassets in Resources */,
 				44BC629E1CEC6A2D004F1913 /* app_JSON in Resources */,
-				D8C7EE4E1CF178B80080285B /* data.plist in Resources */,
 				9E216BB91CC478DB00874A7A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

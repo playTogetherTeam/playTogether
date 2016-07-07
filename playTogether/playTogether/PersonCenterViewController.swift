@@ -11,9 +11,13 @@ import UIKit
 class PersonCenterViewController: UIViewController {
     // 标识符
     let cellId = "cellID"
+    //个人中心选项
+    var psSection = ["我的活动","我的收藏","我的资料","设置"]
+    var pic = ["iconfont-user","iconfont-user","iconfont-user","iconfont-user"]
     
     // 懒加载
     lazy var tableView: UITableView = {
+        
         let table = UITableView()
         // 头部的开始
         table.frame = CGRect(x: 0, y: 0, width: UIScreen.mainScreen().bounds.width, height: UIScreen.mainScreen().bounds.height)
@@ -28,6 +32,7 @@ class PersonCenterViewController: UIViewController {
         imageView.frame.size.height = 200
         return imageView
     }()
+   
     //头像
     lazy var accountImg: UIImageView = {
         let image: UIImageView = UIImageView(image: UIImage(named: "hm"))
@@ -64,10 +69,7 @@ class PersonCenterViewController: UIViewController {
         return label3
     }()
     //基本信息
-    lazy var data: NSArray = {
-        let arr = NSArray(contentsOfFile: NSBundle.mainBundle().pathForResource("data", ofType: "plist")!)!
-        return arr
-    }()
+   
     //图片选择器
     lazy var picker: UIImagePickerController = {
         let pick: UIImagePickerController = UIImagePickerController()
@@ -199,7 +201,7 @@ extension PersonCenterViewController:  UITableViewDelegate, UITableViewDataSourc
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if(section == 0) {
-            return self.data.count
+            return psSection.count
         }else {
             return 10
         }
@@ -211,11 +213,23 @@ extension PersonCenterViewController:  UITableViewDelegate, UITableViewDataSourc
         // 取消选中效果
         //cell.selectionStyle = UITableViewCellSelectionStyle.None
 //        if(indexPath.section == 0) {
-       
-            cell.textLabel?.text = self.data[indexPath.row][0] as? String
-            cell.detailTextLabel?.text = self.data[indexPath.row][1] as? String
-            let image2 = UIImage(named:"iconfont-user")
-            cell.imageView?.image = image2
+        self.tableView.rowHeight = 50
+        cell.frame.size.height = 50
+        
+            cell.textLabel?.text = psSection[indexPath.row]
+            cell.detailTextLabel?.text = ">"
+            //let image2 = UIImage(named:pic[indexPath.row])
+        //image2?.drawInRect(CGRect(x:2,y:2,width:20,height:20))
+        
+        
+        
+        let imageView2 = UIImageView(image: UIImage(named: pic[indexPath.row]))
+        //cell.imageView?.frame=CGRect(x: 2, y: 2, width: 5, height: 11)
+//        imageView2.frame.size.width = 20
+//        imageView2.frame.size.height = 20
+         cell.imageView?.image = imageView2.image
+
+        
 //        }else{
 //            cell.textLabel?.text = "重庆\(indexPath.row + 1)中"
 //            cell.detailTextLabel?.text = "万州\(indexPath.row + 1)中"
