@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UITabBarControllerDelegate
 //        [AVOSCloud setApplicationId:@"Vz8DK7xnkeSuq9R3xcDMUwWH-gzGzoHsz"
 //                  clientKey:@"X4oNqoPe6Bl39rulC91GJSd1"];
         //授权到leancloud
-        AVOSCloud.setApplicationId("FUWMqkvBT5Vb0jak47BrRIQS-gzGzoHsz", clientKey: "YsNkN2Bv5R4KOvMiDtvpyEhx")
+        AVOSCloud.setApplicationId("Vz8DK7xnkeSuq9R3xcDMUwWH-gzGzoHsz", clientKey: "X4oNqoPe6Bl39rulC91GJSd1")
         //跟踪应用统计打开状况
         //AVAnalytics.trackAppOpenedWithLaunchOptions(<#T##launchOptions: [NSObject : AnyObject]!##[NSObject : AnyObject]!#>)
         //测试
