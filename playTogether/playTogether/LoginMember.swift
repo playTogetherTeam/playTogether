@@ -10,9 +10,11 @@ import Foundation
 struct LoginMember {
     var name: String
     var pwd: String
+    var phoneNum: String
     
-    init(name:String, pwd:String){
+    init(name:String, pwd:String, phoneNum: String){
         self.name = name
         self.pwd = pwd
+        self.phoneNum = phoneNum
     }
 }

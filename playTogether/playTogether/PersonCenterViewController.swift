@@ -213,6 +213,7 @@ extension PersonCenterViewController:  UITableViewDelegate, UITableViewDataSourc
         // 取消选中效果
         //cell.selectionStyle = UITableViewCellSelectionStyle.None
 //        if(indexPath.section == 0) {
+<<<<<<< HEAD
         self.tableView.rowHeight = 50
         cell.frame.size.height = 50
         
@@ -230,6 +231,14 @@ extension PersonCenterViewController:  UITableViewDelegate, UITableViewDataSourc
          cell.imageView?.image = imageView2.image
 
         
+=======
+       
+   //      cell.textLabel?.text = self.data[indexPath.row][0] as? String
+       // cell.textLabel?.text = "afaf"
+   //   cell.detailTextLabel?.text = self.data[indexPath.row][1] as? String
+            let image2 = UIImage(named:"iconfont-user")
+            cell.imageView?.image = image2
+>>>>>>> origin/master
 //        }else{
 //            cell.textLabel?.text = "重庆\(indexPath.row + 1)中"
 //            cell.detailTextLabel?.text = "万州\(indexPath.row + 1)中"
@@ -237,6 +246,7 @@ extension PersonCenterViewController:  UITableViewDelegate, UITableViewDataSourc
 //        }
       
         
+      
         return cell
     
     }
