@@ -212,8 +212,9 @@ extension PersonCenterViewController:  UITableViewDelegate, UITableViewDataSourc
         //cell.selectionStyle = UITableViewCellSelectionStyle.None
 //        if(indexPath.section == 0) {
        
-            cell.textLabel?.text = self.data[indexPath.row][0] as? String
-            cell.detailTextLabel?.text = self.data[indexPath.row][1] as? String
+   //      cell.textLabel?.text = self.data[indexPath.row][0] as? String
+       // cell.textLabel?.text = "afaf"
+   //   cell.detailTextLabel?.text = self.data[indexPath.row][1] as? String
             let image2 = UIImage(named:"iconfont-user")
             cell.imageView?.image = image2
 //        }else{
@@ -223,6 +224,7 @@ extension PersonCenterViewController:  UITableViewDelegate, UITableViewDataSourc
 //        }
       
         
+      
         return cell
     
     }

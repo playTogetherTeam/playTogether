@@ -20,11 +20,13 @@ import Foundation
 
 class signUpViewController: UIViewController, UIScrollViewDelegate {
     
+    //var user: AVUser?
+    //let user: AVUser
     var bottomView: UIView!
     var backScrollView: UIScrollView!
     var topView: UIView!
     var phoneTextField: UITextField!
-    var psdTextField: UITextField!
+    var checkCodeTextField: UITextField!
     var psdTextFieldConfirm: UITextField!
     var loginImageView: UIImageView!
     var quickLoginBtn: UIButton!
@@ -53,7 +55,7 @@ class signUpViewController: UIViewController, UIScrollViewDelegate {
             if newValue {
                 countdownTimer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "updateTime:", userInfo: nil, repeats: true)
                 
-                remainingSeconds = 5
+                remainingSeconds = 60
                 
                 sendButton.backgroundColor = UIColor.grayColor()
             } else {
@@ -116,7 +118,7 @@ class signUpViewController: UIViewController, UIScrollViewDelegate {
         loginLabel.font = UIFont.systemFontOfSize(22)
         loginImageView.addSubview(loginLabel)
         
-        let tap = UITapGestureRecognizer(target: self, action: "loginClick")
+        let tap = UITapGestureRecognizer(target: self, action: "loginClick:")
         loginImageView.addGestureRecognizer(tap)
         
         backScrollView.addSubview(loginImageView)
@@ -139,6 +141,7 @@ class signUpViewController: UIViewController, UIScrollViewDelegate {
         phoneTextField?.keyboardType = UIKeyboardType.NumberPad
         addTextFieldToTopViewWiht(phoneTextField!, frame: CGRectMake(leftMargin, 1, AppWidth - leftMargin, textH - 1), placeholder: "请输入手机号")
         
+        
         let line2 = UIView(frame: CGRectMake(0, textH, AppWidth, 1))
         line2.backgroundColor = UIColor.grayColor()
         line2.alpha = alphaV
@@ -149,8 +152,8 @@ class signUpViewController: UIViewController, UIScrollViewDelegate {
 //        line3.alpha = alphaV
 //        topView!.addSubview(line3)
         
-        psdTextField = UITextField()
-        addTextFieldToTopViewWiht(psdTextField!, frame: CGRectMake(leftMargin, textH + 1, AppWidth - leftMargin, textH - 1), placeholder: "验证码")
+        checkCodeTextField = UITextField()
+        addTextFieldToTopViewWiht(checkCodeTextField!, frame: CGRectMake(leftMargin, textH + 1, AppWidth - leftMargin, textH - 1), placeholder: "验证码")
         
         sendButton = UIButton()
         sendButton.frame = CGRect(x: 5, y: textH * 2 + 20, width: AppWidth - leftMargin, height: textH - 1)
@@ -170,6 +173,23 @@ class signUpViewController: UIViewController, UIScrollViewDelegate {
     
     func sendButtonClick(sender: UIButton) {
         isCounting = true
+        let user = AVUser()
+        
+        //user.username = self.randomString(6)
+        user.mobilePhoneNumber = phoneTextField.text
+    //    user.mobilePhoneNumber = phoneTextField.text!
+//        AVUser.requestMobilePhoneVerify(phoneTextField.text) { (succeed, error) in
+//           if succeed {
+//                print("succeed")
+//           }
+//        }
+       
+        AVOSCloud.requestSmsCodeWithPhoneNumber(user.mobilePhoneNumber) { (succeed, error) in
+            if succeed {
+                print("succeed")
+            }
+        }
+        
     }
     
     func updateTime(timer: NSTimer) {
@@ -192,13 +212,43 @@ class signUpViewController: UIViewController, UIScrollViewDelegate {
     
 
     
-    func loginClick() {
+    func loginClick(sender: UIButton) {
+       
+        AVUser.signUpOrLoginWithMobilePhoneNumberInBackground(phoneTextField.text, smsCode: checkCodeTextField.text) { (succeed, error) in
+            if (error != nil) {
+            print("出错了")
+            } else {
+               //AVOSCloud.verifySmsCode(self.checkCodeTextField.text, mobilePhoneNumber: self.phoneTextField.text, callback: { (succeed, error) in
+                
+                dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
+                    //需要长时间处理的代码
+                    dispatch_async(dispatch_get_main_queue(), {
+                        //需要主线程执行的代码
+                
+                        let toConfirmPsd = confirmPsdViewController()
+                        toConfirmPsd.mobilePhoneNum = self.phoneTextField.text
+                        self.hidesBottomBarWhenPushed = true
+                        //self.presentViewController(plantGrassVC, animated: true, completion: nil)
+                        self.navigationController!.pushViewController(toConfirmPsd, animated:true)
+                        //self.hidesBottomBarWhenPushed = false
+                        
+                    })
+                })
+                
+                
+                
+
         
-        let toConfirmPsd = confirmPsdViewController()
-        self.hidesBottomBarWhenPushed = true
-        //self.presentViewController(plantGrassVC, animated: true, completion: nil)
-        self.navigationController!.pushViewController(toConfirmPsd, animated:true)
-        //self.hidesBottomBarWhenPushed = false
+           }
+//            let toConfirmPsd = confirmPsdViewController()
+//                            self.hidesBottomBarWhenPushed = true
+//                            //self.presentViewController(plantGrassVC, animated: true, completion: nil)
+//                            self.navigationController!.pushViewController(toConfirmPsd, animated:true)
+//                            //self.hidesBottomBarWhenPushed = false
+            
+            
+      }
+       
     }
     
    

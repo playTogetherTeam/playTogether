@@ -9,23 +9,22 @@
 import UIKit
 
 class confirmPsdViewController: UIViewController {
-    
-    var bottomView: UIView!
+    var mobilePhoneNum: String!
+   // var bottomView: UIView!
     var backScrollView: UIScrollView!
     var topView: UIView!
-    var phoneTextField: UITextField!
+   // var phoneTextField: UITextField!
     var psdTextField: UITextField!
     var psdTextFieldConfirm: UITextField!
     var loginImageView: UIImageView!
-    var quickLoginBtn: UIButton!
-    var forgetPwdImageView: UIImageView!
-    var registerImageView: UIImageView!
+  //  var quickLoginBtn: UIButton!
+   // var forgetPwdImageView: UIImageView!
+ //   var registerImageView: UIImageView!
     let textCoclor: UIColor = UIColor.colorWith(50, green: 50, blue: 50, alpha: 1)
     let loginW: CGFloat = 250
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         navigationItem.title = "输入密码"
         view.backgroundColor = UIColor.colorWith(245, green: 245, blue: 245, alpha: 1)
         //添加scrollView
@@ -69,8 +68,8 @@ class confirmPsdViewController: UIViewController {
         line1.alpha = alphaV
         topView!.addSubview(line1)
         
-        phoneTextField = UITextField()
-        addTextFieldToTopViewWiht(phoneTextField!, frame: CGRectMake(leftMargin, 1, AppWidth - leftMargin, textH - 1), placeholder: "请输入密码")
+        psdTextField = UITextField()
+        addTextFieldToTopViewWiht(psdTextField!, frame: CGRectMake(leftMargin, 1, AppWidth - leftMargin, textH - 1), placeholder: "请输入密码")
         
         let line2 = UIView(frame: CGRectMake(0, textH, AppWidth, 1))
         line2.backgroundColor = UIColor.grayColor()
@@ -78,8 +77,8 @@ class confirmPsdViewController: UIViewController {
         topView!.addSubview(line2)
         
         
-        psdTextField = UITextField()
-        addTextFieldToTopViewWiht(psdTextField!, frame: CGRectMake(leftMargin, textH + 1, AppWidth - leftMargin, textH - 1), placeholder: "请重复密码")
+        psdTextFieldConfirm = UITextField()
+        addTextFieldToTopViewWiht(psdTextFieldConfirm!, frame: CGRectMake(leftMargin, textH + 1, AppWidth - leftMargin, textH - 1), placeholder: "请重复密码")
         
       
         
@@ -109,6 +108,19 @@ class confirmPsdViewController: UIViewController {
         backScrollView.addSubview(loginImageView)
     }
     
+    func loginClick(sender: UIButton){
+        if psdTextField.text != psdTextFieldConfirm.text {
+           UIAlertController(title: "系统警告", message: "重复输入密码错误", preferredStyle: UIAlertControllerStyle.ActionSheet)
+        }else{
+            AVUser.logInWithMobilePhoneNumberInBackground(mobilePhoneNum, password: psdTextField.text, block: { (user, error) in
+                if error != nil {
+                    print("login succeed")
+                    
+                }
+            })
+        }
+    }
+    
     func addTextFieldToTopViewWiht(textField: UITextField ,frame: CGRect, placeholder: String) {
         textField.frame = frame
         textField.autocorrectionType = .No
@@ -128,6 +140,16 @@ class confirmPsdViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func keyboardWillChangeFrameNotification(note: NSNotification) {
+        // TODO 添加键盘弹出的事件
+        let userinfo = note.userInfo!
+        let rect = userinfo[UIKeyboardFrameEndUserInfoKey]!.CGRectValue
+        var boardH = AppHeight - rect.origin.y
+        if boardH > 0 {
+            boardH = boardH + NavigationHH
+        }
+        backScrollView.contentSize = CGSizeMake(0, view.frame.size.height + boardH)
+    }
 
     /*
     // MARK: - Navigation
