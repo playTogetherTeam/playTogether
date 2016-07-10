@@ -110,16 +110,43 @@ class confirmPsdViewController: UIViewController {
     
     func loginClick(sender: UIButton){
         if psdTextField.text != psdTextFieldConfirm.text {
-           UIAlertController(title: "系统警告", message: "重复输入密码错误", preferredStyle: UIAlertControllerStyle.ActionSheet)
+           let loginAlert = UIAlertController(title: "系统警告", message: "重复输入密码错误", preferredStyle: UIAlertControllerStyle.Alert)
+            let confirmButton = UIAlertAction(title: "确定", style: .Default){ (UIAlertAction) -> Void in print("click yes")
+            }
+            loginAlert.addAction(confirmButton)
+            self.presentViewController(loginAlert, animated:true, completion: nil)
         }else{
             AVUser.logInWithMobilePhoneNumberInBackground(mobilePhoneNum, password: psdTextField.text, block: { (user, error) in
                 if error != nil {
                     print("login succeed")
                     
+                    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
+                        //需要长时间处理的代码
+                        dispatch_async(dispatch_get_main_queue(), {
+                            //需要主线程执行的代码
+                            
+                            let goBackToPersion = PersonCenterViewController()
+                            self.hidesBottomBarWhenPushed = true
+                            //self.presentViewController(plantGrassVC, animated: true, completion: nil)
+                            self.navigationController!.pushViewController(goBackToPersion, animated:true)
+                            
+                        })
+                    })
+                    
+                   
+                    
                 }
             })
         }
     }
+//    
+//    func alertView(loginAlert:UIAlertAction) {
+//        
+//        
+//        
+//       loginAlert.stopAnimating()
+//        
+//    }
     
     func addTextFieldToTopViewWiht(textField: UITextField ,frame: CGRect, placeholder: String) {
         textField.frame = frame
