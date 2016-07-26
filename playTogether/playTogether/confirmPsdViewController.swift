@@ -69,6 +69,7 @@ class confirmPsdViewController: UIViewController {
         topView!.addSubview(line1)
         
         psdTextField = UITextField()
+        psdTextField.secureTextEntry = true
         addTextFieldToTopViewWiht(psdTextField!, frame: CGRectMake(leftMargin, 1, AppWidth - leftMargin, textH - 1), placeholder: "请输入密码")
         
         let line2 = UIView(frame: CGRectMake(0, textH, AppWidth, 1))
@@ -78,6 +79,7 @@ class confirmPsdViewController: UIViewController {
         
         
         psdTextFieldConfirm = UITextField()
+        psdTextFieldConfirm.secureTextEntry = true
         addTextFieldToTopViewWiht(psdTextFieldConfirm!, frame: CGRectMake(leftMargin, textH + 1, AppWidth - leftMargin, textH - 1), placeholder: "请重复密码")
         
       
@@ -116,8 +118,8 @@ class confirmPsdViewController: UIViewController {
             loginAlert.addAction(confirmButton)
             self.presentViewController(loginAlert, animated:true, completion: nil)
         }else{
-            AVUser.logInWithMobilePhoneNumberInBackground(mobilePhoneNum, password: psdTextField.text, block: { (user, error) in
-                if error != nil {
+            AVUser.logInWithMobilePhoneNumberInBackground(mobilePhoneNum, password: psdTextField.text, block: { (AVUser, error) in
+                if AVUser != nil {
                     print("login succeed")
                     
                     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {

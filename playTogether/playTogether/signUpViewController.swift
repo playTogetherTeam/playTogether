@@ -21,7 +21,7 @@ import Foundation
 class signUpViewController: UIViewController, UIScrollViewDelegate {
     
     //var user: AVUser?
-    //let user: AVUser
+   // let user: AVUser
     var bottomView: UIView!
     var backScrollView: UIScrollView!
     var topView: UIView!

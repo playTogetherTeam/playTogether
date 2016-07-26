@@ -81,7 +81,7 @@ class LoginViewController: UIViewController, UIScrollViewDelegate {
         loginLabel.font = UIFont.systemFontOfSize(22)
         loginImageView.addSubview(loginLabel)
         
-        let tap = UITapGestureRecognizer(target: self, action: "loginClick")
+        let tap = UITapGestureRecognizer(target: self, action: "loginClick:")
         loginImageView.addGestureRecognizer(tap)
         
         backScrollView.addSubview(loginImageView)
@@ -198,24 +198,46 @@ class LoginViewController: UIViewController, UIScrollViewDelegate {
 //    }
     
     /// 登录按钮被点击
-    func loginClick() {
+    func loginClick(sender: UIButton) {
         
-        if !phoneTextField.text!.validateMobile() {
-           // SVProgressHUD.showErrorWithStatus("请输入11位的正确手机号", maskType: SVProgressHUDMaskType.Black)
-            return
-        } else if psdTextField.text!.isEmpty {
-          //  SVProgressHUD.showErrorWithStatus("密码不能为空", maskType: SVProgressHUDMaskType.Black)
-            return
-        }
+//        if !phoneTextField.text!.validateMobile() {
+//           // SVProgressHUD.showErrorWithStatus("请输入11位的正确手机号", maskType: SVProgressHUDMaskType.Black)
+//            return
+//        } else if psdTextField.text!.isEmpty {
+//          //  SVProgressHUD.showErrorWithStatus("密码不能为空", maskType: SVProgressHUDMaskType.Black)
+//            return
+//        }
         
         //将用户的账号和密码暂时保存到本地,实际开发中光用MD5加密是不够的,需要多重加密
         let account = phoneTextField.text
-        let psdMD5 = psdTextField.text!.md5
-        NSUserDefaults.standardUserDefaults().setObject(account, forKey: SD_UserDefaults_Account)
-        NSUserDefaults.standardUserDefaults().setObject(psdMD5, forKey: SD_UserDefaults_Password)
-        if NSUserDefaults.standardUserDefaults().synchronize() {
-            navigationController?.popViewControllerAnimated(true)
+ //       let psdMD5 = psdTextField.text!.md5
+//        NSUserDefaults.standardUserDefaults().setObject(account, forKey: SD_UserDefaults_Account)
+//        NSUserDefaults.standardUserDefaults().setObject(psdMD5, forKey: SD_UserDefaults_Password)
+//        if NSUserDefaults.standardUserDefaults().synchronize() {
+//            navigationController?.popViewControllerAnimated(true)
+//        }
+        AVUser.logInWithMobilePhoneNumberInBackground(account, password: psdTextField.text) { (AVUser, error) in
+            if AVUser != nil {
+                print("登陆成功")
+                dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
+                    //需要长时间处理的代码
+                    dispatch_async(dispatch_get_main_queue(), {
+                        //需要主线程执行的代码
+                        
+                        let loginGoBackToPersion = PersonCenterViewController()
+                        self.hidesBottomBarWhenPushed = true
+                        //self.presentViewController(plantGrassVC, animated: true, completion: nil)
+                        self.navigationController!.pushViewController(loginGoBackToPersion, animated:true)
+                        
+                    })
+                })
+                
+
+            }else{
+                print("登录失败")
+            }
         }
+        
     }
     
     /// 快捷登录点击

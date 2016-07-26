@@ -1,4 +1,6 @@
 platform :ios, ‘8.0’
-pod 'AVOSCloud'               
-pod 'AVOSCloudIM'             
-pod 'AVOSCloudCrashReporting'
+target “playTogether” do
+pod 'AVOSCloud’,’3.1.1’               
+pod 'AVOSCloudIM’,’3.1.1’             
+pod 'AVOSCloudCrashReporting’,’3.1.1’
+end

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0240F811D0863E2DB5B9610A /* libPods-playTogether.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1916D82C3D9465FA974B7AA9 /* libPods-playTogether.a */; };
 		442F14CE1CC8C9D3004CE917 /* config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442F14CD1CC8C9D3004CE917 /* config.swift */; };
 		442F14D31CC8CE06004CE917 /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 442F14D21CC8CE06004CE917 /* UIColor+Hex.m */; };
 		445583301CEC5885007F98E3 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4455832F1CEC5885007F98E3 /* BannerView.swift */; };
@@ -56,7 +57,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3F273C5800076635CD16B95B /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		1916D82C3D9465FA974B7AA9 /* libPods-playTogether.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-playTogether.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3DFFA05B02488D0384BFF8EE /* Pods-playTogether.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-playTogether.debug.xcconfig"; path = "Pods/Target Support Files/Pods-playTogether/Pods-playTogether.debug.xcconfig"; sourceTree = "<group>"; };
 		442F14CD1CC8C9D3004CE917 /* config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = config.swift; sourceTree = "<group>"; };
 		442F14D11CC8CE06004CE917 /* UIColor+Hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hex.h"; sourceTree = "<group>"; };
 		442F14D21CC8CE06004CE917 /* UIColor+Hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hex.m"; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 		44BC629C1CEC5E8A004F1913 /* playTogether-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "playTogether-Bridging-Header.h"; sourceTree = "<group>"; };
 		44BC629D1CEC6A2D004F1913 /* app_JSON */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = app_JSON; sourceTree = "<group>"; };
 		44F61F111CE7011000850B6E /* SegmentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentView.swift; sourceTree = "<group>"; };
+		6DEE435EE934D37CBFDA9C97 /* Pods-playTogether.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-playTogether.release.xcconfig"; path = "Pods/Target Support Files/Pods-playTogether/Pods-playTogether.release.xcconfig"; sourceTree = "<group>"; };
 		9E15C6991CECC41D001D6482 /* BaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		9E15C69B1CECC42A001D6482 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		9E15C6C71CFC810F001D6482 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -122,8 +125,6 @@
 		9EB9CFF91D07028E003C1CF0 /* LoginMember.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginMember.swift; sourceTree = "<group>"; };
 		9EB9CFFB1D0EF18E003C1CF0 /* signUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = signUpViewController.swift; sourceTree = "<group>"; };
 		9EB9CFFD1D194B19003C1CF0 /* confirmPsdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = confirmPsdViewController.swift; sourceTree = "<group>"; };
-		BC0C92639D45DEC1A03DF9AD /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		F9C514486838D2B33495046B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +139,7 @@
 				9E15C6D31CFE6BCB001D6482 /* AVOSCloudCrashReporting.framework in Frameworks */,
 				9E15C6D21CFE6BCB001D6482 /* AVOSCloud.framework in Frameworks */,
 				9E15C6D41CFE6BCB001D6482 /* AVOSCloudIM.framework in Frameworks */,
+				0240F811D0863E2DB5B9610A /* libPods-playTogether.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,15 +239,6 @@
 			name = SDWebImage;
 			sourceTree = "<group>";
 		};
-		7E2337CFC09DF30FC1A52BF3 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				BC0C92639D45DEC1A03DF9AD /* Pods.debug.xcconfig */,
-				3F273C5800076635CD16B95B /* Pods.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		9E15C6971CECC3E5001D6482 /* BaseViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -283,7 +276,7 @@
 				9E15C6D71CFE6C46001D6482 /* MobileCoreServices.framework */,
 				9E15C6D51CFE6C2C001D6482 /* SystemConfiguration.framework */,
 				9E15C6CE1CFE6BCB001D6482 /* AVOSCloud */,
-				F9C514486838D2B33495046B /* libPods.a */,
+				1916D82C3D9465FA974B7AA9 /* libPods-playTogether.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -304,7 +297,7 @@
 				9E216BB21CC478DB00874A7A /* playTogether */,
 				9E216BB11CC478DB00874A7A /* Products */,
 				9E15C6CD1CFE6B63001D6482 /* Frameworks */,
-				7E2337CFC09DF30FC1A52BF3 /* Pods */,
+				D75232E38AD39DA9945C1EF2 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -378,6 +371,15 @@
 			name = "发现";
 			sourceTree = "<group>";
 		};
+		D75232E38AD39DA9945C1EF2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3DFFA05B02488D0384BFF8EE /* Pods-playTogether.debug.xcconfig */,
+				6DEE435EE934D37CBFDA9C97 /* Pods-playTogether.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -385,12 +387,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9E216BC21CC478DB00874A7A /* Build configuration list for PBXNativeTarget "playTogether" */;
 			buildPhases = (
-				C06DE9FF83E6DBF65E9DF20F /* Check Pods Manifest.lock */,
+				A646427776146AD9927D67B7 /* [CP] Check Pods Manifest.lock */,
 				9E216BAC1CC478DB00874A7A /* Sources */,
 				9E216BAD1CC478DB00874A7A /* Frameworks */,
 				9E216BAE1CC478DB00874A7A /* Resources */,
-				4F026FDCEBCD3A0245EF69E6 /* Embed Pods Frameworks */,
-				BC5FC0116B211B9E8C975D84 /* Copy Pods Resources */,
+				6ED8293C44CD05E776664A66 /* [CP] Embed Pods Frameworks */,
+				85AF4A4EC96546D4691237CC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -451,49 +453,49 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		4F026FDCEBCD3A0245EF69E6 /* Embed Pods Frameworks */ = {
+		6ED8293C44CD05E776664A66 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-playTogether/Pods-playTogether-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		BC5FC0116B211B9E8C975D84 /* Copy Pods Resources */ = {
+		85AF4A4EC96546D4691237CC /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-playTogether/Pods-playTogether-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C06DE9FF83E6DBF65E9DF20F /* Check Pods Manifest.lock */ = {
+		A646427776146AD9927D67B7 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -647,7 +649,7 @@
 		};
 		9E216BC31CC478DB00874A7A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BC0C92639D45DEC1A03DF9AD /* Pods.debug.xcconfig */;
+			baseConfigurationReference = 3DFFA05B02488D0384BFF8EE /* Pods-playTogether.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -677,7 +679,7 @@
 		};
 		9E216BC41CC478DB00874A7A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3F273C5800076635CD16B95B /* Pods.release.xcconfig */;
+			baseConfigurationReference = 6DEE435EE934D37CBFDA9C97 /* Pods-playTogether.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
